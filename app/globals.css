@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 70% 99%;
+    --foreground: 20 10% 15%;
+
+    --card: 36 70% 99%;
+    --card-foreground: 20 10% 15%;
+
+    --popover: 36 70% 99%;
+    --popover-foreground: 20 10% 15%;
+
+    --primary: 25 70% 47%;
+    --primary-foreground: 36 70% 99%;
+
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 20 10% 15%;
+
+    --muted: 30 30% 92%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 30 30% 92%;
+    --accent-foreground: 20 10% 15%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 36 70% 99%;
+
+    --border: 20 10% 85%;
+    --input: 20 10% 85%;
+    --ring: 25 70% 47%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 10% 10%;
+    --foreground: 36 70% 99%;
+
+    --card: 20 10% 10%;
+    --card-foreground: 36 70% 99%;
+
+    --popover: 20 10% 10%;
+    --popover-foreground: 36 70% 99%;
+
+    --primary: 25 70% 47%;
+    --primary-foreground: 36 70% 99%;
+
+    --secondary: 20 10% 20%;
+    --secondary-foreground: 36 70% 99%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 20 10% 70%;
+
+    --accent: 20 10% 20%;
+    --accent-foreground: 36 70% 99%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 36 70% 99%;
+
+    --border: 20 10% 30%;
+    --input: 20 10% 30%;
+    --ring: 25 70% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-lora font-bold;
+  }
+  /* Dodanie wcięcia akapitowego dla paragrafów */
+  p:not(
+      h1 + p,
+      h2 + p,
+      h3 + p,
+      h4 + p,
+      h5 + p,
+      h6 + p,
+      [class*="font-medium"] + p,
+      [class*="font-bold"] + p,
+      [class*="text-sm"] p,
+      [class*="flex items-start"] p,
+      [class*="CardContent"] p,
+      .text-indent-none
+    ) {
+    text-indent: 2em;
+  }
+}
+
+.font-lora {
+  font-family: var(--font-lora);
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
+.text-indent {
+  text-indent: 2em;
+}
+
+.text-indent-none {
+  text-indent: 0;
+}
