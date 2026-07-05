@@ -5,25 +5,25 @@ export default function Footer() {
   return (
     <footer className="border-t bg-secondary">
       <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:justify-between">
+        <div className="grid gap-8 text-center md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:justify-between md:text-left">
           <address className="space-y-3 not-italic">
-            <p className="flex items-center gap-2 text-sm">
+            <p className="flex items-center justify-center gap-2 text-sm md:justify-start">
               <strong>{siteConfig.name}</strong>
             </p>
-            <p className="flex items-center gap-2 text-sm">
+            <p className="flex items-center justify-center gap-2 text-sm md:justify-start">
               <MapPin className="h-4 w-4 text-primary" />
               {siteConfig.address.display}
             </p>
-            <p className="flex items-center gap-2 text-sm">
+            <p className="flex items-center justify-center gap-2 text-sm md:justify-start">
               <Phone className="h-4 w-4 text-primary" />
               {siteConfig.contact.phone}
             </p>
-            <p className="flex items-center gap-2 text-sm">
+            <p className="flex items-center justify-center gap-2 text-sm md:justify-start">
               <Mail className="h-4 w-4 text-primary" />
               {siteConfig.contact.email}
             </p>
           </address>
-          <div className="flex items-start gap-2 text-sm md:justify-self-end">
+          <div className="flex items-start justify-center gap-2 text-sm md:justify-self-end">
             <Clock className="h-4 w-4 text-primary mt-1" />
             <div>
               <p className="font-medium">Godziny przyjęć:</p>
