@@ -77,7 +77,7 @@ export default function LatestNewsSection() {
                   <div className="flex flex-1 flex-col justify-between p-6">
                     <div className="flex-1">
                       <p className="text-sm font-medium text-primary">
-                        {new Date(news.date).toLocaleDateString("pl-PL")}
+                        <time dateTime={news.date}>{new Date(news.date).toLocaleDateString("pl-PL")}</time>
                       </p>
                       <div className="mt-2">
                         <h3 className="text-xl font-semibold leading-7">{news.title}</h3>

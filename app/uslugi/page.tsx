@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import {
   PawPrint,
   Stethoscope,
@@ -11,6 +12,15 @@ import {
   QrCode,
   Mouse,
 } from "lucide-react"
+import { createPageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Zakres usług weterynaryjnych",
+  description:
+    "Zakres usług Przychodni Małych Zwierząt w Ostrowie Wielkopolskim: profilaktyka, diagnostyka, USG, RTG, chirurgia, stomatologia i opieka dla gryzoni.",
+  path: "/uslugi",
+  keywords: ["usługi weterynaryjne Ostrów Wielkopolski", "USG RTG weterynarz", "chirurgia weterynaryjna"],
+})
 
 export default function ServicesPage() {
   return (
@@ -19,7 +29,7 @@ export default function ServicesPage() {
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Zakres usług</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Oferujemy kompleksową opiekę weterynaryjną dla Twojego pupila
+            Oferujemy kompleksową opiekę weterynaryjną dla psów, kotów i małych gryzoni w Ostrowie Wielkopolskim
           </p>
         </div>
 

@@ -1,7 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import LatestNewsSection from "@/components/latest-news-section"
+import { createPageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Przychodnia weterynaryjna w Ostrowie Wielkopolskim",
+  description:
+    "Przychodnia Małych Zwierząt w Ostrowie Wielkopolskim zapewnia opiekę weterynaryjną dla psów, kotów i małych gryzoni.",
+  path: "/",
+  keywords: ["weterynarz Ostrów Wielkopolski", "przychodnia dla psów i kotów"],
+})
 
 // Główny komponent strony
 export default function Home() {
@@ -33,7 +43,7 @@ export default function Home() {
               <div className="overflow-hidden rounded-lg shadow-md">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2447.png-IxhbGpN49eeipOSEmW5NhNs8sAti6k.jpeg"
-                  alt="Pies odpoczywający"
+                  alt="Pies pod opieką Przychodni Małych Zwierząt w Ostrowie Wielkopolskim"
                   width={800}
                   height={600}
                   className="h-auto w-full object-cover"
@@ -54,7 +64,7 @@ export default function Home() {
               <div className="mx-auto w-full max-w-md overflow-hidden rounded-lg shadow-md">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1630.png-fLZP5ghMYVvKlic9dP6EnzRQMddaYq.jpeg"
-                  alt="Psy na spacerze w parku"
+                  alt="Psy podczas spaceru po wizycie weterynaryjnej"
                   width={600}
                   height={400}
                   className="h-auto w-full object-cover"

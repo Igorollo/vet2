@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import { Heart } from "lucide-react"
+import { createPageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = createPageMetadata({
+  title: "O nas",
+  description:
+    "Poznaj Przychodnię Małych Zwierząt w Ostrowie Wielkopolskim oraz zespół opiekujący się psami, kotami i małymi gryzoniami.",
+  path: "/o-nas",
+  keywords: ["przychodnia weterynaryjna Ostrów Wielkopolski", "zespół weterynaryjny"],
+})
 
 export default function AboutPage() {
   return (
@@ -6,7 +16,9 @@ export default function AboutPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">O nas</h1>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">Poznaj naszą przychodnię i zespół.</p>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+            Poznaj naszą przychodnię weterynaryjną i zespół.
+          </p>
         </div>
 
         <div className="mt-16">

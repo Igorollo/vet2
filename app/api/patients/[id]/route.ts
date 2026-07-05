@@ -5,11 +5,15 @@ import { deletePatientImage } from "@/lib/patients"
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-  console.log(`📥 API: DELETE /api/patients/${params.id}`)
+type RouteContext = {
+  params: Promise<{ id: string }>
+}
+
+export async function DELETE(request: Request, { params }: RouteContext) {
+  const { id } = await params
+  console.log(`📥 API: DELETE /api/patients/${id}`)
 
   try {
-    const id = params.id
     const success = await deletePatientImage(id)
 
     if (!success) {

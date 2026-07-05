@@ -5,11 +5,15 @@ import { getNewsById, updateNews, deleteNews } from "@/lib/news"
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  console.log(`📥 API: GET /api/news/${params.id}`)
+type RouteContext = {
+  params: Promise<{ id: string }>
+}
+
+export async function GET(request: Request, { params }: RouteContext) {
+  const { id } = await params
+  console.log(`📥 API: GET /api/news/${id}`)
 
   try {
-    const id = params.id
     const newsItem = await getNewsById(id)
 
     if (!newsItem) {
@@ -29,11 +33,11 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
-  console.log(`📥 API: PUT /api/news/${params.id}`)
+export async function PUT(request: Request, { params }: RouteContext) {
+  const { id } = await params
+  console.log(`📥 API: PUT /api/news/${id}`)
 
   try {
-    const id = params.id
     const body = await request.json()
     console.log("📦 Request body:", body)
 
@@ -65,11 +69,11 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-  console.log(`📥 API: DELETE /api/news/${params.id}`)
+export async function DELETE(request: Request, { params }: RouteContext) {
+  const { id } = await params
+  console.log(`📥 API: DELETE /api/news/${id}`)
 
   try {
-    const id = params.id
     const success = await deleteNews(id)
 
     if (!success) {
