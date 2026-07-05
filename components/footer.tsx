@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 md:text-right">
+        <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} {siteConfig.name} {siteConfig.owners}
           </p>
