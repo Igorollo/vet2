@@ -4,8 +4,8 @@ import { siteConfig } from "@/lib/site"
 export default function Footer() {
   return (
     <footer className="border-t bg-secondary">
-      <div className="mx-auto max-w-7xl px-4 py-8 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="space-y-3">
+      <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:justify-between">
           <address className="space-y-3 not-italic">
             <p className="flex items-center gap-2 text-sm">
               <strong>{siteConfig.name}</strong>
@@ -23,7 +23,7 @@ export default function Footer() {
               {siteConfig.contact.email}
             </p>
           </address>
-          <div className="flex items-start gap-2 text-sm">
+          <div className="flex items-start gap-2 text-sm md:justify-self-end">
             <Clock className="h-4 w-4 text-primary mt-1" />
             <div>
               <p className="font-medium">Godziny przyjęć:</p>
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 md:mt-0">
+        <div className="mt-8 md:text-right">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} {siteConfig.name} {siteConfig.owners}
           </p>
